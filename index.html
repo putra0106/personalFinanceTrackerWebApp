@@ -6,6 +6,70 @@
     <link href="./src/output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Personal Finance Tracker</h1>
+    <div
+      class="min-h-screen flex flex-col items-center justify-center bg-gray-300">
+      <div class="bg-white p-8 rounded-lg flex flex-col gap-5">
+        <h1 class="text-3xl font-bold text-center">
+          Catatan Keuangan Keluargaku
+        </h1>
+        <!-- INCOME -->
+        <div class="flex flex-col gap-3">
+          <div>
+            <label for="input-pemasukan">Pemasukan:</label>
+            <input
+              type="number"
+              id="input-pemasukan"
+              class="w-full border px-2 py-1 rounded-md" />
+          </div>
+          <div>
+            <label for="category-pemasukan">Category:</label>
+            <select
+              class="border w-full px-2 py-1 rounded-md"
+              name="category-pemasukan"
+              id="category-pemasukan">
+              <option value="">Pilih Category</option>
+              <option value="gaji">Gaji</option>
+              <option value="freelance">freelance</option>
+              <option value="usaha">usaha</option>
+              <option value="dll">dan lain lain</option>
+            </select>
+          </div>
+          <div>
+            <label for="ctt"> Catatan / (-) Jika Tidak ada </label>
+            <input
+              class="w-full border px-2 py-1 rounded-md"
+              type="text"
+              id="ctt-pemasukan" />
+          </div>
+          <div>
+            <button
+              type="button"
+              id="btn-pemasukan"
+              class="bg-green-500 text-white rounded-lg py-3 shadow-xl w-full font-semibold">
+              Input Pemasukan
+            </button>
+            <!-- hasil inputan -->
+            <div class="mt-8 overflow-x-auto">
+              <table
+                class="w-full border border-gray-200 rounded-lg overflow-hidden">
+                <thead class="bg-gray-100">
+                  <tr class="text-left text-sm">
+                    <th class="p-3">No</th>
+                    <th class="p-3">Pemasukan</th>
+                    <th class="p-3">Category</th>
+                    <th class="p-3">Catatan</th>
+                  </tr>
+                </thead>
+                <tbody id="t-body-pemasukan" class="text-sm">
+                  <!-- data masuk sini -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
