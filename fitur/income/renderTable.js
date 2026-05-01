@@ -1,8 +1,7 @@
 // ui
+// body table
+const toBodyPemasukan = document.getElementById("t-body-pemasukan");
 export function renderTableIncome(pemasukan, category, ctt, data) {
-  // body table
-  const toBodyPemasukan = document.getElementById("t-body-pemasukan");
-
   // nomor
   let no = 1;
 
@@ -12,13 +11,30 @@ export function renderTableIncome(pemasukan, category, ctt, data) {
   // looping data munculin ke ui
   data.forEach((item) => {
     toBodyPemasukan.innerHTML += `
-      <tr >
-      <td>${no++}</td>
-        <td>${item.pemasukan}</td>
-        <td>${item.category}</td>
-        <td>${item.ctt}</td>
-      </tr>
-    `;
+    <tr class="border-b hover:bg-gray-50 transition">
+      <td class="px-4 py-3 text-sm text-gray-700">${no++}</td>
+
+      <td class="px-4 py-3 text-sm font-medium text-gray-900">
+        ${item.pemasukan}
+      </td>
+
+      <td class="px-4 py-3 text-sm text-gray-700">
+        ${item.category}
+      </td>
+
+      <td class="px-4 py-3 text-sm text-gray-600">
+        ${item.ctt}
+      </td>
+
+      <td class="px-4 py-3 text-center">
+        <button
+          class="bg-red-500 hover:bg-red-600 transition px-3 py-1.5 text-sm text-white rounded-lg shadow-sm"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  `;
   });
 
   // setelh tombol di klik value kembali kosong
