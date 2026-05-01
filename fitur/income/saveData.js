@@ -10,12 +10,12 @@ export function saveDataIncome(id, pemasukan, category, ctt, dataIncome) {
     ctt: ctt,
   };
 
-  // ambil data lama
-  const dataIncomeLama = getFromLocal("income");
+  // ambil data exist
+  const data = getFromLocal("income");
 
   // push data baru object ke array
-  dataIncomeLama.push(dataSaveObject);
+  data.push(dataSaveObject);
 
   // simpan ke data lama
-  saveToLocal("income", dataIncomeLama);
+  saveToLocal("income", data);
 }

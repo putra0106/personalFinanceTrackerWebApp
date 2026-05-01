@@ -9,7 +9,6 @@ const inputPemasukan = document.getElementById("input-pemasukan");
 const categoryPemasukan = document.getElementById("category-pemasukan");
 const cttPemasukan = document.getElementById("ctt-pemasukan");
 const btnPemasukan = document.getElementById("btn-pemasukan");
-const id = Date.now().toString(36) + Math.random().toString(36).substring(2); // id
 
 // save data income
 let dataIncomeBaru = [];
@@ -19,12 +18,14 @@ export function Income() {
   document.addEventListener("DOMContentLoaded", () => {
     const data = getFromLocal("income");
 
-    renderTableIncome(inputPemasukan, categoryPemasukan, cttPemasukan, data);
+    renderTableIncome(data);
   });
 
   // klik tambah data
   btnPemasukan.addEventListener("click", () => {
     // ambil valuenya
+    const id =
+      Date.now().toString(36) + Math.random().toString(36).substring(2); // id
     const pemasukan = formatRupiah(inputPemasukan.value.trim()); // ubah format ke rupiah
     const category = categoryPemasukan.value.trim();
     const ctt = cttPemasukan.value.trim();
@@ -43,8 +44,8 @@ export function Income() {
     // render body table
     renderTableIncome(dataBaru);
     // setelh tombol di klik value kembali kosong
-    pemasukan.value = "";
-    category.value = "";
-    ctt.value = "";
+    inputPemasukan.value = "";
+    categoryPemasukan.value = "";
+    cttPemasukan.value = "";
   });
 }

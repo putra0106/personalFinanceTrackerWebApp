@@ -6,6 +6,6 @@ export function saveToLocal(save, data) {
 
 export function getFromLocal(get) {
   if (get === "income") {
-    return JSON.parse(localStorage.getItem("income")) || [];
+    return JSON.parse(localStorage.getItem("income"));
   }
 }
