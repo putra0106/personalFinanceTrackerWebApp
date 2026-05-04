@@ -1,7 +1,9 @@
 import { getFromLocal, saveToLocal } from "../shared/localStorgeData.js";
 
 // simpan data
-export function saveDataIncome(id, tgl, pemasukan, category, ctt, dataIncome) {
+export function saveDataIncome(id, tgl, pemasukan, category, ctt) {
+  const currentData = getFromLocal("income") || [];
+
   // simpan data input sebagai object
   const dataSaveObject = {
     id: id,
@@ -12,8 +14,8 @@ export function saveDataIncome(id, tgl, pemasukan, category, ctt, dataIncome) {
   };
 
   // push data baru object ke array
-  dataIncome.push(dataSaveObject);
+  currentData.push(dataSaveObject);
 
   // simpan ke data lama
-  saveToLocal("income", dataIncome);
+  saveToLocal("income", currentData);
 }

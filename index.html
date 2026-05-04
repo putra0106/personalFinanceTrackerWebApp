@@ -215,7 +215,9 @@
                     <th class="p-3">No</th>
                     <th class="p-3">Tanggal</th>
                     <th class="p-3">Category</th>
+                    <th class="p-3">Budget</th>
                     <th class="p-3">Pengeluaran</th>
+                    <th class="p-3">Sisa Budget</th>
                     <th class="p-3">Aksi</th>
                   </tr>
                 </thead>
@@ -224,8 +226,41 @@
             </div>
           </div>
         </div>
+     <div class="flex gap-3 mt-6 text-center justify-center flex-col">
+  
+  <!-- Total Pemasukan -->
+  <div class="bg-white border border-gray-300 rounded-lg p-4">
+    <p class="font-bold">Total Pemasukan:</p>
+    <span id="total-income">0</span>
+  </div>
+
+  <!-- Total Budget -->
+  <div class="bg-white border border-gray-300 rounded-lg p-4">
+    <p class="font-bold">Total Budget:</p>
+    <span id="total-budget">0</span>
+  </div>
+
+  <!-- Total Pengeluaran -->
+  <div class="bg-white border border-gray-300 rounded-lg p-4">
+    <p class="font-bold">Total Pengeluaran:</p>
+    <span id="total-expense">0</span>
+  </div>
+
+  <!-- Total Sisa Income -->
+  <div class="bg-white border border-gray-300 rounded-lg p-4">
+    <p class="font-bold">Total Sisa Dari Pemasukan:</p>
+    <span id="total-sisa-income">0</span>
+  </div>
+
+  <!-- Total Sisa Budget -->
+  <div class="bg-white border border-gray-300 rounded-lg p-4">
+    <p class="font-bold">Total Sisa Budget:</p>
+    <span id="total-sisa-budget">0</span>
+  </div>
+
+</div>
       </div>
-    </div>
+     
 
     <script type="module" src="main.js"></script>
   </body>

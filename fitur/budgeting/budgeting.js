@@ -1,5 +1,6 @@
 import { formatRupiah } from "../shared/formatRupiah.js";
 import { getFromLocal, saveToLocal } from "../shared/localStorgeData.js";
+import { Total } from "../total/total.js";
 import { renderTableBudgeting } from "./renderTable.js";
 import { saveDataBudgeting } from "./saveData.js";
 
@@ -8,13 +9,13 @@ const categoryBudgeting = document.getElementById("category-budgeting");
 const btnBudgeting = document.getElementById("btn-budgeting");
 
 // simpan data sementara
-let dataBudgetingExist = [];
+let dataBudgetingExist = getFromLocal("budgeting") || [];
 
 export function Budgeting() {
   document.addEventListener("DOMContentLoaded", () => {
-    const data = getFromLocal("budgeting") || [];
+    dataBudgetingExist = getFromLocal("budgeting") || [];
 
-    renderTableBudgeting(data);
+    renderTableBudgeting(dataBudgetingExist);
   });
   btnBudgeting.addEventListener("click", () => {
     // ambil valuenya
@@ -28,9 +29,13 @@ export function Budgeting() {
       return;
     }
 
-    saveDataBudgeting(id, budgeting, category, dataBudgetingExist);
+    saveDataBudgeting(id, budgeting, category);
 
-    renderTable(dataBudgetingExist);
+    dataBudgetingExist = getFromLocal("budgeting") || [];
+
+    renderTableBudgeting(dataBudgetingExist);
+
+    Total();
     // balik ke input kosong lagi
     inputBudgeting.value = "";
     categoryBudgeting.value = "";

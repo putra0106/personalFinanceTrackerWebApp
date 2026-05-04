@@ -1,6 +1,7 @@
 // import
 import { formatRupiah } from "../shared/formatRupiah.js";
 import { getFromLocal } from "../shared/localStorgeData.js";
+import { Total } from "../total/total.js";
 import { renderTableIncome } from "./renderTable.js";
 import { saveDataIncome } from "./saveData.js";
 
@@ -12,14 +13,14 @@ const tglPemasukan = document.getElementById("tanggal-pemasukan");
 const btnPemasukan = document.getElementById("btn-pemasukan");
 
 // save data income
-let dataIncomeBaru = [];
+let dataIncomeBaru = getFromLocal("income") || [];
 
 export function Income() {
   // render pertama akan muncul
   document.addEventListener("DOMContentLoaded", () => {
-    const data = getFromLocal("income") || [];
+    dataIncomeBaru = getFromLocal("income") || [];
 
-    renderTableIncome(data);
+    renderTableIncome(dataIncomeBaru);
   });
 
   // klik tambah data
@@ -38,13 +39,15 @@ export function Income() {
     }
 
     // simpan data
-    saveDataIncome(id, tgl, pemasukan, category, ctt, dataIncomeBaru);
+    saveDataIncome(id, tgl, pemasukan, category, ctt);
 
     // ambil data baru dari local
     const dataBaru = getFromLocal("income") || [];
 
     // render body table
     renderTableIncome(dataBaru);
+
+    Total();
     // setelh tombol di klik value kembali kosong
     inputPemasukan.value = "";
     categoryPemasukan.value = "";

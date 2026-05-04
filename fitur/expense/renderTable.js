@@ -1,6 +1,7 @@
 // ui
 
 import { getFromLocal } from "../shared/localStorgeData.js";
+import { formatRupiah } from "../shared/formatRupiah.js";
 import { deleteFeatures } from "../shared/deleteFeatures.js";
 const tBodyPengeluaran = document.getElementById("t-body-pengeluaran");
 
@@ -16,7 +17,9 @@ export function renderTableExpense(data) {
       <td class="px-4 py-3 text-sm text-gray-700">${no++}</td>
       <td class="px-4 py-3 text-sm font-medium text-gray-900">${item.tgl}</td>
       <td class="px-4 py-3 text-sm text-gray-700">${item.category}</td>
+      <td class="px-4 py-3 text-sm text-gray-700">${item.budget}</td>
       <td class="px-4 py-3 text-sm font-medium text-gray-900">${item.pengeluaran}</td>
+      <td class="px-4 py-3 text-sm font-medium text-gray-900">${formatRupiah(item.sisaBudget)}</td>
       <td class="px-4 py-3 text-center">
         <button class="delete bg-red-500 hover:bg-red-600 transition px-3 py-1.5 text-sm text-white rounded-lg shadow-sm" data-id="${item.id}">
           Delete

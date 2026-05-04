@@ -3,6 +3,7 @@ import { renderTableIncome } from "../income/renderTable.js";
 import { saveToLocal } from "./localStorgeData.js";
 import { renderTableBudgeting } from "../budgeting/renderTable.js";
 import { renderTableExpense } from "../expense/renderTable.js";
+import { Total } from "../total/total.js";
 
 export function deleteFeatures(id, data, storage) {
   //filter semua data kecuali yang dipilih
@@ -31,4 +32,6 @@ export function deleteFeatures(id, data, storage) {
     // render ulang dengan data terupdate
     renderTableExpense(updatedData);
   }
+
+  Total();
 }
