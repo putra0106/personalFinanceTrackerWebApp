@@ -3,7 +3,7 @@ import { renderTableExpense } from "./renderTable.js";
 import { saveDataExpense } from "./saveData.js";
 import { getFromLocal } from "../shared/localStorgeData.js";
 import { formatRupiah } from "../shared/formatRupiah.js";
-import { Total } from "../total/total.js";
+import { Total } from "../totalAndReset/total.js";
 
 const tglPengeluaran = document.getElementById("tanggal-pengeluaran");
 const categoryPengeluaran = document.getElementById("category-pengeluaran");

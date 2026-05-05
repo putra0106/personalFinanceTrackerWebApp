@@ -1,103 +1,111 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aplikasi catatan keuangan keluarga untuk membantu mengelola pemasukan, budgeting, dan pengeluaran dengan mudah." />
     <link href="./src/output.css" rel="stylesheet" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>Catatan Keuangan Keluargaku</title>
   </head>
-  <body>
-    <div
-      class="min-h-screen flex flex-col items-center justify-center bg-gray-300">
-      <div class="bg-white p-8 rounded-lg flex flex-col gap-5">
-        <h1 class="text-3xl font-bold text-center">
-          Catatan Keuangan Keluargaku
-        </h1>
-        <!-- INCOME -->
-        <div class="flex flex-col gap-3">
-          <h1 class="font-bold text-2xl">Income</h1>
-          <div>
-            <label for="tanggal-pemasukan" class="font-semibold"
-              >Tanggal Pemasukan:</label
-            >
-            <input
-              type="date"
-              id="tanggal-pemasukan"
-              class="w-full border px-2 py-1 rounded-md" />
-          </div>
-          <div>
-            <label for="input-pemasukan" class="font-semibold"
-              >Pemasukan:</label
-            >
-            <input
-              type="number"
-              id="input-pemasukan"
-              class="w-full border px-2 py-1 rounded-md" />
-          </div>
-          <div>
-            <label for="category-pemasukan" class="font-semibold"
-              >Category:</label
-            >
-            <select
-              class="border w-full px-2 py-1 rounded-md"
-              name="category-pemasukan"
-              id="category-pemasukan">
-              <option value="">Pilih Category</option>
-              <option value="gaji">Gaji</option>
-              <option value="freelance">freelance</option>
-              <option value="usaha">usaha</option>
-              <option value="dll">dan lain lain</option>
-            </select>
-          </div>
-          <div>
-            <label for="ctt" class="font-semibold">
-              Catatan / (-) Jika Tidak ada
-            </label>
-            <input
-              class="w-full border px-2 py-1 rounded-md"
-              type="text"
-              id="ctt-pemasukan" />
-          </div>
-          <div>
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="description"
+        content="Aplikasi catatan keuangan keluarga untuk membantu mengelola pemasukan, budgeting, dan pengeluaran dengan mudah." />
+      <link href="./src/output.css" rel="stylesheet" />
+      <link rel="manifest" href="./manifest.json" />
+      <title>Catatan Keuangan Keluargaku</title>
+    </head>
+
+    <body>
+      <div
+        class="min-h-screen flex flex-col items-center justify-center bg-gray-300 px-3">
+        <div
+          class="bg-white p-4 sm:p-8 rounded-lg flex flex-col gap-5 w-full max-w-md mx-auto">
+          <h1 class="text-xl sm:text-3xl font-bold text-center">
+            Catatan Keuangan Keluargaku
+          </h1>
+
+          <!-- INCOME -->
+          <div class="flex flex-col gap-3">
+            <h1 class="font-bold text-lg sm:text-2xl">Income</h1>
+
+            <div>
+              <label class="font-semibold">Tanggal Pemasukan:</label>
+              <input
+                type="date"
+                id="tanggal-pemasukan"
+                class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm" />
+            </div>
+
+            <div>
+              <label class="font-semibold">Pemasukan:</label>
+              <input
+                type="number"
+                id="input-pemasukan"
+                class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm" />
+            </div>
+
+            <div>
+              <label class="font-semibold">Category:</label>
+              <select
+                id="category-pemasukan"
+                class="border w-full px-2 py-2 sm:py-1 rounded-md text-sm">
+                <option value="">Pilih Category</option>
+                <option value="gaji">Gaji</option>
+                <option value="freelance">freelance</option>
+                <option value="usaha">usaha</option>
+                <option value="dll">dan lain lain</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="font-semibold">Catatan / (-) Jika Tidak ada</label>
+              <input
+                type="text"
+                id="ctt-pemasukan"
+                class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm" />
+            </div>
+
             <button
-              type="button"
               id="btn-pemasukan"
-              class="bg-green-500 text-white rounded-lg py-3 shadow-xl w-full font-semibold">
+              class="bg-green-500 text-white rounded-lg py-3 shadow-xl w-full font-semibold active:scale-95">
               Simpan Pemasukan
             </button>
-            <!-- hasil inputan -->
-            <div class="mt-8 overflow-x-auto">
+
+            <div class="mt-4 overflow-x-auto">
               <table
-                class="w-full border border-gray-200 rounded-lg overflow-hidden">
+                class="w-full text-xs sm:text-sm border border-gray-200 rounded-lg overflow-hidden">
                 <thead class="bg-gray-100">
-                  <tr class="text-center text-sm">
-                    <th class="p-3">No</th>
-                    <th class="p-3">Tanggal</th>
-                    <th class="p-3">Pemasukan</th>
-                    <th class="p-3">Category</th>
-                    <th class="p-3">Catatan</th>
-                    <th class="p-3">Aksi</th>
+                  <tr class="text-center">
+                    <th class="p-2 sm:p-3">No</th>
+                    <th class="p-2 sm:p-3">Tanggal</th>
+                    <th class="p-2 sm:p-3">Pemasukan</th>
+                    <th class="p-2 sm:p-3">Category</th>
+                    <th class="p-2 sm:p-3">Catatan</th>
+                    <th class="p-2 sm:p-3">Aksi</th>
                   </tr>
                 </thead>
-                <tbody id="t-body-pemasukan" class="text-sm"></tbody>
+                <tbody id="t-body-pemasukan"></tbody>
               </table>
             </div>
           </div>
-        </div>
 
-        <!-- budegeting -->
-        <div class="flex flex-col gap-4 mt-6">
-          <h1 class="font-bold text-2xl">Budgeting</h1>
+          <!-- BUDGETING -->
+          <div class="flex flex-col gap-4 mt-6">
+            <h1 class="font-bold text-lg sm:text-2xl">Budgeting</h1>
 
-          <div class="flex flex-col gap-3">
-            <!-- category -->
             <div>
-              <label for="category-budgeting" class="block mb-1 font-medium">
-                Category Budgeting
-              </label>
+              <label class="block mb-1 font-medium">Category Budgeting</label>
               <select
-                name="category-budgeting"
                 id="category-budgeting"
-                class="w-full border px-2 py-1 rounded-md">
+                class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm">
                 <option value="">Pilih Category</option>
                 <option value="makan">Makan</option>
                 <option value="listrik">Listrik</option>
@@ -110,158 +118,127 @@
               </select>
             </div>
 
-            <!-- input -->
             <div>
-              <label for="input-budgeting" class="block mb-1 font-medium">
-                Jumlah Budget
-              </label>
+              <label class="block mb-1 font-medium">Jumlah Budget</label>
               <input
                 type="number"
                 id="input-budgeting"
-                name="input-budgeting"
-                class="w-full border px-2 py-1 rounded-md"
-                placeholder="Masukkan jumlah budget" />
+                class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm" />
             </div>
 
-            <!-- button -->
             <button
-              type="button"
               id="btn-budgeting"
-              class="bg-green-500 text-white rounded-lg py-3 shadow-lg w-full font-semibold transition">
+              class="bg-green-500 text-white rounded-lg py-3 shadow-lg w-full font-semibold active:scale-95">
               Simpan Budgeting
             </button>
 
-            <!-- hasil input budegeting -->
-            <div class="mt-8 overflow-x-auto">
+            <div class="mt-4 overflow-x-auto">
               <table
-                class="w-full border border-gray-200 rounded-lg overflow-hidden">
+                class="w-full text-xs sm:text-sm border border-gray-200 rounded-lg overflow-hidden">
                 <thead class="bg-gray-100">
-                  <tr class="text-center text-sm">
-                    <th class="p-3">No</th>
-                    <th class="p-3">Category</th>
-                    <th class="p-3">Budgeting</th>
-                    <th class="p-3">Aksi</th>
+                  <tr class="text-center">
+                    <th class="p-2 sm:p-3">No</th>
+                    <th class="p-2 sm:p-3">Category</th>
+                    <th class="p-2 sm:p-3">Budgeting</th>
+                    <th class="p-2 sm:p-3">Aksi</th>
                   </tr>
                 </thead>
-                <tbody id="t-body-budgeting" class="text-sm"></tbody>
+                <tbody id="t-body-budgeting"></tbody>
               </table>
             </div>
           </div>
-        </div>
 
-        <!-- pengeluaran -->
-        <div class="flex flex-col gap-4 mt-6">
-          <h1 class="font-bold text-2xl">Expenses</h1>
+          <!-- EXPENSE -->
+          <div class="flex flex-col gap-4 mt-6">
+            <h1 class="font-bold text-lg sm:text-2xl">Expenses</h1>
 
-          <div class="flex flex-col gap-3">
-            <!-- category -->
-            <div>
-              <label for="tanggal-pengeluaran" class="block mb-1 font-medium">
-                Tanggal Pengeluaran
-              </label>
-              <input
-                type="date"
-                id="tanggal-pengeluaran"
-                name="tanggal-pengeluaran"
-                class="w-full border px-2 py-1 rounded-md" />
-            </div>
-            <div>
-              <label for="category-pengeluaran" class="block mb-1 font-medium">
-                Category Pengeluaran
-              </label>
-              <select
-                name="category-pengeluaran"
-                id="category-pengeluaran"
-                class="w-full border px-2 py-1 rounded-md">
-                <option value="">Pilih Category</option>
-                <option value="makan">Makan</option>
-                <option value="listrik">Listrik</option>
-                <option value="air">Air</option>
-                <option value="gas">Gas</option>
-                <option value="uang kebutuhan anak">Uang Kebutuhan Anak</option>
-                <option value="infaq sodaqoh">Infaq/Sodaqoh</option>
-                <option value="bensin">Bensin</option>
-                <option value="lain-lain">Lain - Lain</option>
-              </select>
-            </div>
+            <input
+              type="date"
+              id="tanggal-pengeluaran"
+              class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm" />
 
-            <!-- input -->
-            <div>
-              <label for="input-pengeluaran" class="block mb-1 font-medium">
-                Jumlah Pengeluaran
-              </label>
-              <input
-                type="number"
-                id="input-pengeluaran"
-                name="input-pengeluaran"
-                class="w-full border px-2 py-1 rounded-md"
-                placeholder="Masukkan jumlah pengeluaran" />
-            </div>
+            <select
+              id="category-pengeluaran"
+              class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm">
+              <option value="">Pilih Category</option>
+              <option value="makan">Makan</option>
+              <option value="listrik">Listrik</option>
+              <option value="air">Air</option>
+              <option value="gas">Gas</option>
+              <option value="uang kebutuhan anak">Uang Kebutuhan Anak</option>
+              <option value="infaq sodaqoh">Infaq/Sodaqoh</option>
+              <option value="bensin">Bensin</option>
+              <option value="lain-lain">Lain - Lain</option>
+            </select>
 
-            <!-- button -->
+            <input
+              type="number"
+              id="input-pengeluaran"
+              class="w-full border px-2 py-2 sm:py-1 rounded-md text-sm" />
+
             <button
-              type="button"
               id="btn-pengeluaran"
-              class="bg-green-500 text-white rounded-lg py-3 shadow-lg w-full font-semibold transition">
+              class="bg-green-500 text-white rounded-lg py-3 shadow-lg w-full font-semibold active:scale-95">
               Simpan Pengeluaran
             </button>
 
-            <!-- hasil input pengeluaran -->
-            <div class="mt-8 overflow-x-auto">
+            <div class="mt-4 overflow-x-auto">
               <table
-                class="w-full border border-gray-200 rounded-lg overflow-hidden">
+                class="w-full text-xs sm:text-sm border border-gray-200 rounded-lg overflow-hidden">
                 <thead class="bg-gray-100">
-                  <tr class="text-center text-sm">
-                    <th class="p-3">No</th>
-                    <th class="p-3">Tanggal</th>
-                    <th class="p-3">Category</th>
-                    <th class="p-3">Budget</th>
-                    <th class="p-3">Pengeluaran</th>
-                    <th class="p-3">Sisa Budget</th>
-                    <th class="p-3">Aksi</th>
+                  <tr class="text-center">
+                    <th class="p-2 sm:p-3">No</th>
+                    <th class="p-2 sm:p-3">Tanggal</th>
+                    <th class="p-2 sm:p-3">Category</th>
+                    <th class="p-2 sm:p-3">Budget</th>
+                    <th class="p-2 sm:p-3">Pengeluaran</th>
+                    <th class="p-2 sm:p-3">Sisa</th>
+                    <th class="p-2 sm:p-3">Aksi</th>
                   </tr>
                 </thead>
-                <tbody id="t-body-pengeluaran" class="text-sm"></tbody>
+                <tbody id="t-body-pengeluaran"></tbody>
               </table>
             </div>
           </div>
+
+          <!-- TOTAL -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 text-center">
+            <div class="border p-3 rounded-lg">
+              <p class="font-bold">Total Pemasukan</p>
+              <span id="total-income">0</span>
+            </div>
+
+            <div class="border p-3 rounded-lg">
+              <p class="font-bold">Total Budget</p>
+              <span id="total-budget">0</span>
+            </div>
+
+            <div class="border p-3 rounded-lg">
+              <p class="font-bold">Total Pengeluaran</p>
+              <span id="total-expense">0</span>
+            </div>
+
+            <div class="border p-3 rounded-lg">
+              <p class="font-bold">Sisa Income</p>
+              <span id="total-sisa-income">0</span>
+            </div>
+
+            <div class="border p-3 rounded-lg sm:col-span-2">
+              <p class="font-bold">Sisa Budget</p>
+              <span id="total-sisa-budget">0</span>
+            </div>
+          </div>
+
+          <button
+            id="btn-reset"
+            class="bg-red-500 text-white rounded-lg py-3 shadow-lg w-full font-semibold active:scale-95 mt-4"
+            onclick="location.reload()">
+            Reset Data
+          </button>
         </div>
-     <div class="flex gap-3 mt-6 text-center justify-center flex-col">
-  
-  <!-- Total Pemasukan -->
-  <div class="bg-white border border-gray-300 rounded-lg p-4">
-    <p class="font-bold">Total Pemasukan:</p>
-    <span id="total-income">0</span>
-  </div>
 
-  <!-- Total Budget -->
-  <div class="bg-white border border-gray-300 rounded-lg p-4">
-    <p class="font-bold">Total Budget:</p>
-    <span id="total-budget">0</span>
-  </div>
-
-  <!-- Total Pengeluaran -->
-  <div class="bg-white border border-gray-300 rounded-lg p-4">
-    <p class="font-bold">Total Pengeluaran:</p>
-    <span id="total-expense">0</span>
-  </div>
-
-  <!-- Total Sisa Income -->
-  <div class="bg-white border border-gray-300 rounded-lg p-4">
-    <p class="font-bold">Total Sisa Dari Pemasukan:</p>
-    <span id="total-sisa-income">0</span>
-  </div>
-
-  <!-- Total Sisa Budget -->
-  <div class="bg-white border border-gray-300 rounded-lg p-4">
-    <p class="font-bold">Total Sisa Budget:</p>
-    <span id="total-sisa-budget">0</span>
-  </div>
-
-</div>
+        <script type="module" src="main.js"></script>
       </div>
-     
-
-    <script type="module" src="main.js"></script>
-  </body>
+    </body>
+  </html>
 </html>

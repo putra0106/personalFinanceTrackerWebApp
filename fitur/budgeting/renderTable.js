@@ -1,12 +1,15 @@
 const tBodyBudgeting = document.getElementById("t-body-budgeting");
 import { getFromLocal } from "../shared/localStorgeData.js";
 import { deleteFeatures } from "../shared/deleteFeatures.js";
+import { Budgeting } from "./budgeting.js";
 
-export function renderTableBudgeting(data) {
+export function renderTableBudgeting() {
+  const data = getFromLocal("budgeting") || [];
   let no = 1;
 
   //   selalu reset terlebih dahulu jika saat ingin menampilkan data berikutnya
   tBodyBudgeting.innerHTML = "";
+  if (data.length === 0) return;
 
   let rows = "";
   data.forEach((item) => {

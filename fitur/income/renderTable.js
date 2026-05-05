@@ -3,9 +3,13 @@
 import { getFromLocal } from "../shared/localStorgeData.js";
 import { saveDataIncome } from "./saveData.js";
 import { deleteFeatures } from "../shared/deleteFeatures.js";
+import { Reset } from "../totalAndReset/reset.js";
+import { Expense } from "../expense/expense.js";
 const tBodyPemasukan = document.getElementById("t-body-pemasukan");
 
-export function renderTableIncome(data) {
+export function renderTableIncome() {
+  const data = getFromLocal("income") || [];
+
   let no = 1;
 
   tBodyPemasukan.innerHTML = "";

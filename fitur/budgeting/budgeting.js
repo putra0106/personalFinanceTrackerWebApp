@@ -1,6 +1,6 @@
 import { formatRupiah } from "../shared/formatRupiah.js";
 import { getFromLocal, saveToLocal } from "../shared/localStorgeData.js";
-import { Total } from "../total/total.js";
+import { Total } from "../totalAndReset/total.js";
 import { renderTableBudgeting } from "./renderTable.js";
 import { saveDataBudgeting } from "./saveData.js";
 

@@ -1,7 +1,8 @@
 // import
 import { formatRupiah } from "../shared/formatRupiah.js";
 import { getFromLocal } from "../shared/localStorgeData.js";
-import { Total } from "../total/total.js";
+import { Reset } from "../totalAndReset/reset.js";
+import { Total } from "../totalAndReset/total.js";
 import { renderTableIncome } from "./renderTable.js";
 import { saveDataIncome } from "./saveData.js";
 

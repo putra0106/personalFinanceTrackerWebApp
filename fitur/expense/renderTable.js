@@ -3,12 +3,15 @@
 import { getFromLocal } from "../shared/localStorgeData.js";
 import { formatRupiah } from "../shared/formatRupiah.js";
 import { deleteFeatures } from "../shared/deleteFeatures.js";
+import { Expense } from "./expense.js";
 const tBodyPengeluaran = document.getElementById("t-body-pengeluaran");
 
-export function renderTableExpense(data) {
+export function renderTableExpense() {
+  const data = getFromLocal("expense") || [];
   let no = 1;
   // Perbaikan typo dari toBodyPemasukan ke tBodyPemasukan
   tBodyPengeluaran.innerHTML = "";
+  if (data.length === 0) return;
 
   let rows = ""; // Simpan string di variabel dulu
   data.forEach((item) => {
